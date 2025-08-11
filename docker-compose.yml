@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  parser:
+    build: .
+    container_name: oe-cqm-parsers
+    volumes:
+      - .:/app
+    working_dir: /app
+    environment:
+      - MONGO_URL=mongodb://mongo:27017/cqm
+      - VSAC_API_KEY=${VSAC_API_KEY}
+    depends_on:
+      - mongo
+    stdin_open: true
+    tty: true
+    command: bash
+
+  mongo:
+    image: mongo:6.0
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:

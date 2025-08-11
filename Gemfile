@@ -4,7 +4,8 @@ source 'https://rubygems.org'
 
 #git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
-gem 'cqm-parsers', :git => 'https://github.com/openemr/cqm-parsers.git', :branch => 'bonnie_version_singleton_fix'
+gem 'debug', '~> 1.0'
+gem 'cqm-parsers', :git => 'https://github.com/sjpadgett/cqm-parsers.git', :branch => 'master'
 gem 'sprockets'
 gem 'rubyzip', '>= 1.3.0'
 gem 'zip-zip'
